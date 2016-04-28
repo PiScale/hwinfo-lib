@@ -13,3 +13,9 @@ fdisk -l
 demidecode
 impitool
 hdparm -iI /dev/sd?
+
+## for Adaptec Raid card
+/usr/StorMan/arcconf getconfig <1|2|..>
+
+## for MegaRAID LSI Raid card
+/opt/MegaRAID/storcli/storcli64 /c<0|1|..>/dall show all
