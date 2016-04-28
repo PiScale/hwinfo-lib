@@ -1,5 +1,4 @@
-/* Read from /sys/devices/virtual/dmi/id/board_{name,serial,vendor} */
-package mbinfo
+package hwinfo
 
 import (
 	"fmt"
@@ -7,6 +6,7 @@ import (
 	"strings"
 )
 
+/* Read from /sys/devices/virtual/dmi/id/board_{name,serial,vendor} */
 const MB_NAME_FILE = "/sys/devices/virtual/dmi/id/board_name"
 const MB_SERIAL_FILE = "/sys/devices/virtual/dmi/id/board_serial"
 const MB_VENDOR_FILE = "/sys/devices/virtual/dmi/id/board_vendor"

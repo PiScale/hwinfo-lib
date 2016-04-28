@@ -1,4 +1,4 @@
-package cpuinfo
+package hwinfo
 
 import (
 	"fmt"

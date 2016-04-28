@@ -2,8 +2,7 @@ package main
 
 import (
 	"fmt"
-	. "github.com/PiScale/hwinfo-lib/cpuinfo"
-	. "github.com/PiScale/hwinfo-lib/mbinfo"
+	. "github.com/PiScale/hwinfo-lib"
 )
 
 func main() {
