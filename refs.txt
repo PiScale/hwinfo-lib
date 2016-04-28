@@ -1,0 +1,15 @@
+Commands:
+
+cat /proc/cpuinfo
+cat /proc/scsi/scsi
+cat /proc/patitions
+
+lshw
+lsblk -a
+lsusb
+lspci
+lsscsi -s
+fdisk -l
+demidecode
+impitool
+hdparm -iI /dev/sd?
