@@ -4,6 +4,7 @@ package mbinfo
 import (
 	"fmt"
 	"os/exec"
+	"strings"
 )
 
 const MB_NAME_FILE = "/sys/devices/virtual/dmi/id/board_name"
@@ -30,5 +31,8 @@ func cat_file(filepath string) (ret string) {
 
 func init() {
 	Motherboard.Model = cat_file(MB_VENDOR_FILE) + cat_file(MB_NAME_FILE)
+	Motherboard.Model = strings.Replace(Motherboard.Model, "\n", " ", -1)
+
 	Motherboard.Serial = cat_file(MB_SERIAL_FILE)
+	Motherboard.Serial = strings.Replace(Motherboard.Serial, "\n", " ", -1)
 }
