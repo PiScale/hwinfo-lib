@@ -8,4 +8,5 @@ import (
 func main() {
 	fmt.Println(Cpu)
 	fmt.Println(Motherboard)
+	fmt.Println(Ram)
 }
