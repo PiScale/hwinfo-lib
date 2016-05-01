@@ -1,7 +1,6 @@
 package hwinfo
 
 import (
-	"fmt"
 	"os/exec"
 	"strings"
 )
@@ -20,13 +19,13 @@ type Ramstats struct {
 	Items         []Ramtype
 }
 
-var Ram Ramstats
+//var Ram Ramstats
 
-func init() {
+func Get_ram() (Ram Ramstats, err error) {
 	cmd := exec.Command("/usr/sbin/dmidecode", "-t", "memory")
 	buf, err := cmd.Output()
 	if err != nil {
-		fmt.Println(err)
+		//fmt.Println(err)
 		return
 	}
 	output := strings.Split(string(buf), "\n")
@@ -67,4 +66,5 @@ Iterate_Line:
 		}
 
 	}
+	return
 }

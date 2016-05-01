@@ -1,7 +1,6 @@
 package hwinfo
 
 import (
-	"fmt"
 	"io/ioutil"
 	"strconv"
 	"strings"
@@ -19,12 +18,12 @@ and bypass line have info we don't need. Count CPU quantity and vcores number.
 */
 const CPU_INFO_FILE = "/proc/cpuinfo"
 
-var Cpu Cpustats
+//var Cpu Cpustats
 
-func init() {
+func Get_cpu() (Cpu Cpustats, err error) {
 	b, err := ioutil.ReadFile(CPU_INFO_FILE)
 	if err != nil {
-		fmt.Println(err)
+		//fmt.Println(err)
 		return
 	}
 	cpulines := strings.Split(string(b), "\n")
@@ -44,4 +43,5 @@ func init() {
 			}
 		}
 	}
+	return
 }
