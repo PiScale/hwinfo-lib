@@ -39,6 +39,8 @@ Iterate_Line:
 			key, value := line_arr[0], line_arr[1]
 			if key == "\tMaximum Capacity" {
 				Ram.TotalCapacity = value
+				/* TODO: it's maximum(-able) ram capacity, not current total capacity.
+				   Will fix in the future */
 			}
 			switch key {
 			case "\tArray Handle":
