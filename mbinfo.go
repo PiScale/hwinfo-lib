@@ -1,7 +1,8 @@
 package hwinfo
 
 import (
-	"os/exec"
+	utils "github.com/PiScale/hwinfo-lib/utils"
+	//"os/exec"
 	"strings"
 )
 
@@ -17,7 +18,8 @@ type MBstats struct {
 
 var Motherboard MBstats
 
-func cat_file(filepath string) (ret string, err error) {
+/* Moved to utils package
+func Cat_file(filepath string) (ret string, err error) {
 	cmd := exec.Command("/bin/cat", filepath)
 	buf, err := cmd.Output()
 	if err != nil {
@@ -27,14 +29,15 @@ func cat_file(filepath string) (ret string, err error) {
 	ret = string(buf)
 	return
 }
+*/
 
 func Get_motherboard() (Motherboard MBstats, err error) {
-	vendor, _ := cat_file(MB_VENDOR_FILE)
-	productName, _ := cat_file(MB_NAME_FILE)
+	vendor, _ := utils.Cat_file(MB_VENDOR_FILE)
+	productName, _ := utils.Cat_file(MB_NAME_FILE)
 	Motherboard.Model = vendor + productName
 	Motherboard.Model = strings.Replace(Motherboard.Model, "\n", " ", -1)
 
-	Motherboard.SerialNumber, err = cat_file(MB_SERIAL_FILE)
+	Motherboard.SerialNumber, err = utils.Cat_file(MB_SERIAL_FILE)
 	if err == nil {
 		Motherboard.SerialNumber = strings.Replace(Motherboard.SerialNumber, "\n", " ", -1)
 	}
