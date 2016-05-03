@@ -19,3 +19,6 @@ hdparm -iI /dev/sd?
 
 ## for MegaRAID LSI Raid card
 /opt/MegaRAID/storcli/storcli64 /c<0|1|..>/dall show all
+
+## for differentiate between Physical vs Virtual network interfaces
+ls -l /sys/class/net/ | grep pci
