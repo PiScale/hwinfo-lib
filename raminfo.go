@@ -11,7 +11,7 @@ type Ramtype struct {
 	ClockSpeed   string
 	Manufacturer string
 	SerialNumber string
-	PartNumber   string
+	//PartNumber   string
 }
 
 type Ramstats struct {
@@ -57,8 +57,8 @@ Iterate_Line:
 				Ram.Items[slot].Manufacturer = value
 			case "\tSerial Number":
 				Ram.Items[slot].SerialNumber = value
-			case "\tPart Number":
-				Ram.Items[slot].PartNumber = value
+				//case "\tPart Number":
+				//	Ram.Items[slot].PartNumber = value
 			}
 
 		} else {
