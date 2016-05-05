@@ -11,10 +11,12 @@ func main() {
 	Ram, _ := hwinfo.Get_ram()
 	Chassis, _ := hwinfo.Get_chassis()
 	Nic, _ := hwinfo.Get_nic()
+	Hdd, _ := hwinfo.Get_hdd()
 
 	fmt.Println(Cpu)
 	fmt.Println(Motherboard)
 	fmt.Println(Ram)
 	fmt.Println(Chassis)
 	fmt.Println(Nic)
+	fmt.Println(Hdd)
 }

@@ -13,6 +13,8 @@ fdisk -l
 demidecode
 impitool
 hdparm -iI /dev/sd?
+lshw -class disk
+lshw -class network
 
 ## for Adaptec Raid card
 /usr/StorMan/arcconf getconfig <1|2|..>
@@ -22,3 +24,6 @@ hdparm -iI /dev/sd?
 
 ## for differentiate between Physical vs Virtual network interfaces
 ls -l /sys/class/net/ | grep pci
+
+## another command to read DISK info
+/sbin/udevadm info --query=property --name=sda
